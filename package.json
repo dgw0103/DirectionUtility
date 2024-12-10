@@ -1,19 +1,25 @@
 {
-  "name": "com.3d-group.unity-package-template",
-  "displayName": "3D Group - Unity package template",
-  "version": "1.1.3",
-  "description": "Template for creating Unity game engine packages",
-  "dependencies": {},
-  "homepage": "https://github.com/3d-group/unity-package-template.git",
+  "name": "com.dgw0103.directionutility",
+  "displayName": "dgw0103 - Direction utility",
+  "version": "0.0.0",
+  "description": "Direction utility tools for unity",
+  "keywords": [
+    "unity",
+	"unity3d",
+	"upm",
+    "dgw0103",
+    "utility"
+  ],
+  "homepage": "https://github.com/dgw0103/directionutility.git",
   "bugs": {
-    "url": "https://github.com/3d-group/unity-package-template/issues"
+    "url": "https://github.com/dgw0103/directionutility/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/3d-group/unity-package-template.git"
+    "url": "https://github.com/dgw0103/DirectionUtility.git"
   },
   "license": "MIT",
-  "author": "3D Group (https://3d.fi/)",
+  "author": "dgw0103 (https://dgw0103.com)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
