@@ -18,8 +18,7 @@ public class Numbering
     private static void AddNumberIcon()
     {
         GameObject canvasPrefab = CanvasPrefab;
-        GameObject canvasInScene = Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None).
-            SingleOrDefault((x) => PrefabUtility.GetCorrespondingObjectFromSource(x) == canvasPrefab);
+        GameObject canvasInScene = FindObjectsByType().SingleOrDefault((x) => PrefabUtility.GetCorrespondingObjectFromSource(x) == canvasPrefab);
 
         if (canvasInScene == null)
         {
@@ -38,6 +37,17 @@ public class Numbering
         {
             return AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(canvasPrefabGUID), typeof(GameObject)) as GameObject;
         }
+    }
+    private static GameObject[] FindObjectsByType()
+    {
+        
+#if UNITY_2023_1_OR_NEWER
+        return Object.FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+#elif UNITY_2020_1_OR_NEWER
+        return Object.FindObjectsOfType<GameObject>(false);
+#else
+        return Object.FindObjectsOfType<GameObject>();
+#endif
     }
     private static GameObject NumberIconPrefab
     {
@@ -60,8 +70,7 @@ public class Numbering
     [MenuItem(path + "Update number")]
     private static void UpdateNumber()
     {
-        GameObject canvasInScene = Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None).
-            SingleOrDefault((x) => PrefabUtility.GetCorrespondingObjectFromSource(x) == CanvasPrefab);
+        GameObject canvasInScene = FindObjectsByType().SingleOrDefault((x) => PrefabUtility.GetCorrespondingObjectFromSource(x) == CanvasPrefab);
 
 
         if (canvasInScene == null)

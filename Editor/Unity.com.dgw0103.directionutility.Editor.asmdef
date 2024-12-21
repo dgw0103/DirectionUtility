@@ -1,5 +1,6 @@
 {
     "name": "Unity.com.dgw0103.directionutility.Editor",
+    "rootNamespace": "",
     "references": [],
     "includePlatforms": [
         "Editor"
